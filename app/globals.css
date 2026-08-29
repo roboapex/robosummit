@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-void: #05080f;
+  --color-panel: #0c1424;
+  --color-panel-2: #111c30;
+  --color-line: #1f2c47;
+  --color-line-2: #2c3d61;
+  --color-steel: #8a94a6;
+  --color-silver: #c7cfdc;
+  --color-snow: #f2f5f9;
+  --color-blue: #2f6bff;
+  --color-blue-deep: #16386e;
+  --color-sky: #7fa8ff;
+  --color-red: #e5372b;
+  --color-red-bright: #ff5a47;
+
+  --font-sans: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "SFMono-Regular", Menlo, monospace;
+
+  --animate-spin-slower: spin 120s linear infinite;
+  --animate-blink: blink 1.6s steps(2, start) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-void);
+  color: var(--color-snow);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-red);
+  color: var(--color-snow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
