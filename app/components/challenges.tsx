@@ -75,22 +75,22 @@ function ChallengeCard({ challenge }: { challenge: Challenge }) {
           {challenge.description}
         </p>
 
-        <dl className="mt-6 space-y-2.5 border-t border-line pt-5">
-          {[
-            { label: "Zone", value: challenge.zone.split(" // ")[0] },
-            { label: "Crew Size", value: challenge.teamSize },
-            { label: "Points", value: challenge.points },
-          ].map((meta) => (
-            <div key={meta.label} className="flex items-baseline justify-between gap-4">
-              <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">
-                {meta.label}
-              </dt>
-              <dd className="font-mono text-xs font-semibold uppercase tracking-wide text-snow">
-                {meta.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        {/*<dl className="mt-6 space-y-2.5 border-t border-line pt-5">*/}
+        {/*  {[*/}
+        {/*    { label: "Zone", value: challenge.zone.split(" // ")[0] },*/}
+        {/*    { label: "Crew Size", value: challenge.teamSize },*/}
+        {/*    { label: "Points", value: challenge.points },*/}
+        {/*  ].map((meta) => (*/}
+        {/*    <div key={meta.label} className="flex items-baseline justify-between gap-4">*/}
+        {/*      <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-steel">*/}
+        {/*        {meta.label}*/}
+        {/*      </dt>*/}
+        {/*      <dd className="font-mono text-xs font-semibold uppercase tracking-wide text-snow">*/}
+        {/*        {meta.value}*/}
+        {/*      </dd>*/}
+        {/*    </div>*/}
+        {/*  ))}*/}
+        {/*</dl>*/}
       </div>
     </article>
   );

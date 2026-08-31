@@ -51,29 +51,29 @@ export const CHALLENGES: Challenge[] = [
   },
   {
     code: "CH-03",
-    name: "Archery",
-    tagline: "Precision targeting grid",
+    name: "Countdown to Corona",
+    tagline: "High-force launch ignition trials",
     description:
-      "Launch projectiles at the orbital target grid from escalating distances. Inner rings score double; trajectory calibration is everything.",
-    zone: "ZONE C // FIRING RANGE",
+      "The rocket is supplied — the machine is the launch crew. Our pads hold massive, ignition levers that demand serious force and clever gearing to depress. Lock the lever down and the rocket flies; stall halfway and the pad stays cold.",
+    zone: "ZONE C // LAUNCH PAD",
     teamSize: "2 PILOTS",
     points: "90 PTS MAX",
     difficulty: "ADVANCED",
-    placeholder: "[Placeholder: Robot launcher aimed at target grid]",
-    image: "/archery.png"
+    placeholder: "[Placeholder: Robot pushing a heavy ignition lever as a rocket lifts off]",
+    image: ""
   },
   {
     code: "CH-04",
-    name: "Asteroid Mining",
-    tagline: "Resource sort & extract",
+    name: "Gravity Well Showdown",
+    tagline: "Robotic tug of war",
     description:
-      "Extract damaged ore cubes from the asteroid cluster",
-    zone: "ZONE E // BELT STATION",
+      "Two machines latch onto opposite ends of a tether strung across the gravity well, engines growling. Pure traction, torque, and tenacity — drag the rival rover across the center line before it drags you into the abyss.",
+    zone: "ZONE E // GRAVITY WELL",
     teamSize: "4 PILOTS",
     points: "140 PTS MAX",
     difficulty: "ELITE",
-    placeholder: "[Placeholder: Robot arm sorting ore cubes]",
-    image: "/bricks.png"
+    placeholder: "[Placeholder: Two robots locked in tug of war]",
+    image: ""
   }
 ];
 
