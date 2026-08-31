@@ -57,7 +57,7 @@ export default function Registration() {
               ))}
             </dl>
             <a
-              href="#contact"
+              href="https://go.gov.sg/robosummit2026"
               className="block border-t border-line bg-red px-10 py-5 text-center text-sm font-bold uppercase tracking-[0.2em] text-void transition-colors duration-200 hover:bg-snow"
             >
               Register Now

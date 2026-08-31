@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { label: "Challenges", href: "#challenges" },
   { label: "Rulebook", href: "#rulebook" },
   { label: "Registration", href: "#registration" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact Us", href: "#contact" },
 ] as const;
 
@@ -24,7 +25,7 @@ export type Challenge = {
 export const CHALLENGES: Challenge[] = [
   {
     code: "CH-01 (Main Mission)",
-    name: "Moonbase Madnessw",
+    name: "Moonbase Madness",
     tagline: "Retrieve fuel and launch the rocket",
     description:
       "Program your rover to cross the Regolith Field, collect fuel cores and deliver them to the outpost hopper for a rocket launch. No driver input once the run begins.",
@@ -37,16 +38,16 @@ export const CHALLENGES: Challenge[] = [
   },
   {
     code: "CH-02",
-    name: "Weightlifting",
-    tagline: "Payload deadlift trials",
+    name: "Crater Catacombs",
+    tagline: "Autonomous maze navigation",
     description:
-      "A gantry-style machine must hoist standardised water bottles to staged heights. Every locked elevation earns points; structural failure ends the lift.",
-    zone: "ZONE B // GANTRY DECK",
+      "With no sky above and no driver below, the rover must map dead ends, thread narrow passages, and reach the end point before the clock runs out.",
+    zone: "ZONE B // SUBSURFACE LABYRINTH",
     teamSize: "3 PILOTS",
     points: "100 PTS MAX",
     difficulty: "CORE",
-    placeholder: "[Placeholder: Gantry robot lifting cargo block]",
-    image: "/weight.png"
+    placeholder: "[Placeholder: Rover navigating dark cave maze]",
+    image: "/maze.svg"
   },
   {
     code: "CH-03",
@@ -177,4 +178,42 @@ export const KEY_DATES = [
   { label: "REGISTRATION OPENS", value: "01 SEP 2026" },
   { label: "REGISTRATION CLOSES", value: "TBA" },
   { label: "COMPETITION DAY", value: "20 NOV 2026" },
+];
+
+export const FAQS = [
+  {
+    question: "What is a crew? Is it the same as a team?",
+    answer:
+      "Yes — crew is just our mission-speak for a team. One crew is one team of 2–4 students plus a faculty mentor, registering one robot for the season.",
+  },
+  {
+    question: "Who can compete?",
+    answer:
+      "Any P3-P6 student from the same school. Crews may be all from a year or cross-year, and each crew must have one faculty mentor acting as coach (guidance only — no build help during runs).",
+  },
+  {
+    question: "What's the difference between the side mission and the main mission",
+    answer:
+    "The side missions are tasks adapted from the main mission so that you can use the same robot. However, the side missions will have a twist!"
+  },
+  {
+    question: "Are the robots autonomous?",
+    answer:
+      "Completely. Once the start button is pressed there are no remote controls, Bluetooth, or any physical intervention. The only way a run stops is a safety 'STOP' call or a boundary violation.",
+  },
+  {
+    question: "Are there size or weight limits for the robot?",
+    answer:
+      "Robots must fit within 250x250x250mm, weigh under 1.5kg, and use safe materials that will not damage the arena. All machines are checked at tech inspection on competition day.",
+  },
+  {
+    question: "How do we register?",
+    answer:
+      "Four stages: form your crew, submit the crew list through the Google Form before the deadline, pass tech inspection on competition day, then receive your mission schedule and launch. Capacity is capped at 48 crews, so register early.",
+  },
+  {
+    question: "What if we need a rule clarification?",
+    answer:
+      "Clarifications are issued through the team captain briefing and are binding for the rest of the season. Judges' decisions on the field are final.",
+  },
 ];
