@@ -28,7 +28,7 @@ export const CHALLENGES: Challenge[] = [
     name: "Moonbase Madness",
     tagline: "Retrieve fuel and launch the rocket",
     description:
-      "Program your rover to cross the Regolith Field, collect fuel cores and deliver them to the outpost hopper for a rocket launch. No driver input once the run begins.",
+      "Program your rover to cross the Regolith Field, collect fuel cores, deliver them to the outpost hopper and pull a lever for a rocket launch. No driver input once the run begins.",
     zone: "REGOLITH FIELD",
     teamSize: "4 PILOTS",
     points: "TBA (Largest share of total points)",

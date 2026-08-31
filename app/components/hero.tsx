@@ -18,7 +18,7 @@ const item = {
 };
 
 const STATS = [
-  { label: "Mission Zones", value: "06" },
+  { label: "Mission Zones", value: "05" },
   { label: "Crew Capacity", value: "30" },
   { label: "Divisions", value: "PRI 3-6" },
 ];
