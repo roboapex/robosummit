@@ -34,7 +34,7 @@ export const CHALLENGES: Challenge[] = [
     points: "TBA (Largest share of total points)",
     difficulty: "CORE",
     placeholder: "[Placeholder: Mars Rover-style Robot]",
-    image: ""
+    image: "/RoboSummitMap_1.0.svg"
   },
   {
     code: "CH-02",
@@ -45,7 +45,7 @@ export const CHALLENGES: Challenge[] = [
     zone: "ZONE B // SUBSURFACE LABYRINTH",
     teamSize: "3 PILOTS",
     points: "100 PTS MAX",
-    difficulty: "CORE",
+    difficulty: "ELITE",
     placeholder: "[Placeholder: Rover navigating dark cave maze]",
     image: "/maze.svg"
   },
@@ -58,9 +58,9 @@ export const CHALLENGES: Challenge[] = [
     zone: "ZONE C // LAUNCH PAD",
     teamSize: "2 PILOTS",
     points: "90 PTS MAX",
-    difficulty: "ADVANCED",
+    difficulty: "CORE",
     placeholder: "[Placeholder: Robot pushing a heavy ignition lever as a rocket lifts off]",
-    image: ""
+    image: "/rocket.jpeg"
   },
   {
     code: "CH-04",
@@ -71,9 +71,22 @@ export const CHALLENGES: Challenge[] = [
     zone: "ZONE E // GRAVITY WELL",
     teamSize: "4 PILOTS",
     points: "140 PTS MAX",
-    difficulty: "ELITE",
-    placeholder: "[Placeholder: Two robots locked in tug of war]",
+    difficulty: "ADVANCED",
+    placeholder: "[No image available at this moment]",
     image: ""
+  },
+  {
+    code: "CH-05",
+    name: "Fuel Core Cascade",
+    tagline: "Ball deposition relay",
+    description:
+      "Salvage the scattered fuel cores and rain them into the outpost hoppers from escalating heights. Every core that drops clean through the chute scores; a single jam in the feed line and the whole cascade goes critical.",
+    zone: "ZONE D // HOPPER ARRAY",
+    teamSize: "3 PILOTS",
+    points: "80 PTS MAX",
+    difficulty: "ADVANCED",
+    placeholder: "[Placeholder: Robot depositing balls into elevated hoppers]",
+    image: "/deposit.jpeg"
   }
 ];
 
@@ -189,7 +202,7 @@ export const FAQS = [
   {
     question: "Who can compete?",
     answer:
-      "Any P3-P6 student from the same school. Crews may be all from a year or cross-year, and each crew must have one faculty mentor acting as coach (guidance only — no build help during runs).",
+      "Any P3–P6 student from the same school may participate. Teams may consist of students from the same level or across different year levels. Each team must have one faculty mentor who serves as a coach, providing guidance only and not assisting with building during competition runs.",
   },
   {
     question: "What's the difference between the side mission and the main mission",

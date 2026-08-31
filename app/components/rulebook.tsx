@@ -38,25 +38,38 @@ export default function Rulebook() {
 
           <Reveal delay={0.15}>
             <div className="flex h-full flex-col border border-line p-6 sm:p-8">
-              <PlaceholderImage
-                caption="[Placeholder: Rulebook v2.4 cover]"
-                ratio="4:3"
-                label="DOC // RB-2026"
-              />
+              <img src={"/rules.png"}/>
               <div className="mt-6 space-y-2 font-mono text-xs uppercase tracking-[0.15em] text-steel">
                 <p>
-                  Version <span className="text-snow">2.4</span> · Format{" "}
-                  <span className="text-snow">PDF</span>
+                  Version <span className="text-snow">2.0</span> · Format{" "}
+                  <span className="text-snow">Google Drive</span>
                 </p>
                 <p>
-                  Last Revised <span className="text-snow">21 Aug 2026</span>
+                  Last Revised <span className="text-snow">31 Aug 2026</span>
                 </p>
               </div>
+              <ul className="mt-6 space-y-2 text-sm text-silver">
+                {[
+                  "General rules",
+                  "Mission rules",
+                  "Assembly guides for props",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span
+                      className="h-1.5 w-1.5 shrink-0 bg-red-bright"
+                      aria-hidden
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <a
-                href="#contact"
+                href="https://drive.google.com/drive/folders/1s_iQX2yvgfnFYVU1tR5pvwWlx7DQTJPL?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 block bg-red px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.15em] text-void transition-colors duration-200 hover:bg-snow"
               >
-                Download Full Rulebook
+                Download Resources
               </a>
               <p className="mt-4 text-sm leading-relaxed text-steel">
                 Crews are responsible for reading the full regulation set
