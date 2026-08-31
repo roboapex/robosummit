@@ -27,7 +27,7 @@ export default function Rulebook() {
                     <h3 className="text-xl font-bold uppercase tracking-tight text-snow">
                       {rule.title}
                     </h3>
-                    <p className="mt-2 max-w-prose text-sm leading-relaxed text-silver sm:text-base">
+                    <p className="mt-2 max-w-prose text-sm leading-relaxed text-silver sm:text-base whitespace-pre-wrap">
                       {rule.body}
                     </p>
                   </div>

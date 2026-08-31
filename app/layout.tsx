@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "./components/motion-provider";
+import WebNodes from "./components/web-nodes";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -26,7 +27,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-void text-snow">
+      <body className="min-h-full flex flex-col bg-void text-snow relative">
+        <WebNodes />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>

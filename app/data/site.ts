@@ -79,24 +79,24 @@ export const CHALLENGES: Challenge[] = [
 export const RULES = [
   {
     code: "R-01",
-    title: "Machine Specification",
-    body: "Robots must fit a 50 x 50 x 50 cm starting volume and run on a maximum 12V battery supply. All mechanisms must fit inside the chassis at inspection.",
+    title: "Team & Build Specifications",
+    body: "Crews consist of 2–3 students and 1 coach (guidance only). Robots must fit within 250x250x250mm, weigh under 1.5kg, and use safe materials that won't damage the arena.",
   },
   {
     code: "R-02",
-    title: "Autonomy & Control",
-    body: "Events are split into driver-controlled and autonomous windows. In autonomous windows, no radio input is permitted — sensors and preloaded code only.",
+    title: "Strict Autonomy",
+    body: "Robots must complete missions entirely on their own. Once the start button is pressed, no remote controls, Bluetooth, or physical intervention by the team is permitted.",
   },
   {
     code: "R-03",
-    title: "Safety & Inspection",
-    body: "Every machine passes technical inspection before pit day. Exposed wiring, unshielded blades or unsafe projectiles result in a no-start until cleared.",
+    title: "Official Runs",
+    body: "Each official run has a strict 2-minute time limit. Teams can halt their robot for safety by calling 'STOP', but any interference or boundary violations will end the run immediately.",
   },
   {
     code: "R-04",
-    title: "Scoring & Conduct",
-    body: "Points are logged live by field referees and mirrored to the leaderboard. Deliberate interference with opposing machines is grounds for disqualification.",
-  },
+    title: "Conduct & Adjudication",
+    body: "Fair play is mandatory. No outside help is allowed during runs. Intentional damage to the field or other robots will result in severe penalties or disqualification. Judges' decisions are final.",
+  }
 ];
 
 export const LEADERBOARD = [

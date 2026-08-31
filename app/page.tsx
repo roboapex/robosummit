@@ -6,21 +6,25 @@ import Rulebook from "./components/rulebook";
 import Registration from "./components/registration";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import WebNodes from "./components/web-nodes";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Challenges />
-        <Arena />
-        <Rulebook />
-        {/*<Leaderboard />*/}
-        <Registration />
-        <Contact />
-      </main>
-      <Footer />
+      <WebNodes />
+      <div className="relative z-10">
+        <Header />
+        <main className="flex-1">
+          <Hero />
+          <Challenges />
+          <Arena />
+          <Rulebook />
+          {/*<Leaderboard />*/}
+          <Registration />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
