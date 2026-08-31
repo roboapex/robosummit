@@ -2,7 +2,6 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Challenges", href: "#challenges" },
   { label: "Rulebook", href: "#rulebook" },
-  { label: "Leaderboard", href: "#leaderboard" },
   { label: "Registration", href: "#registration" },
   { label: "Contact Us", href: "#contact" },
 ] as const;
@@ -19,6 +18,7 @@ export type Challenge = {
   points: string;
   difficulty: "CORE" | "ADVANCED" | "ELITE";
   placeholder: string;
+  image: string;
 };
 
 export const CHALLENGES: Challenge[] = [
@@ -27,12 +27,13 @@ export const CHALLENGES: Challenge[] = [
     name: "Feeding Frenzy",
     tagline: "Autonomous resupply run",
     description:
-      "Program your rover to cross the Regolith Field, collect nutrient cores and deliver them to the outpost hopper — no driver input once the run begins.",
+      "Program your rover to cross the Regolith Field, collect nutrient cores and deliver them to the outpost hopper. No driver input once the run begins.",
     zone: "ZONE A // REGOLITH FIELD",
     teamSize: "4 PILOTS",
     points: "120 PTS MAX",
     difficulty: "CORE",
     placeholder: "[Placeholder: Mars Rover-style Robot]",
+    image: ""
   },
   {
     code: "CH-02",
@@ -45,30 +46,33 @@ export const CHALLENGES: Challenge[] = [
     points: "100 PTS MAX",
     difficulty: "CORE",
     placeholder: "[Placeholder: Gantry robot lifting cargo block]",
+    image: "/weight.png"
   },
   {
     code: "CH-03",
     name: "Archery",
     tagline: "Precision targeting grid",
     description:
-      "Launch projectiles at the orbital target grid from escalating distances. Inner rings score double — trajectory calibration is everything.",
+      "Launch projectiles at the orbital target grid from escalating distances. Inner rings score double; trajectory calibration is everything.",
     zone: "ZONE C // FIRING RANGE",
     teamSize: "2 PILOTS",
     points: "90 PTS MAX",
     difficulty: "ADVANCED",
     placeholder: "[Placeholder: Robot launcher aimed at target grid]",
+    image: "/archery.png"
   },
   {
     code: "CH-04",
     name: "Asteroid Mining",
     tagline: "Resource sort & extract",
     description:
-      "Extract ore cubes from the asteroid cluster and sort them by color into refinery bins. Mixed loads are rejected by the inspectors.",
+      "Extract damaged ore cubes from the asteroid cluster",
     zone: "ZONE E // BELT STATION",
     teamSize: "4 PILOTS",
     points: "140 PTS MAX",
     difficulty: "ELITE",
     placeholder: "[Placeholder: Robot arm sorting ore cubes]",
+    image: "/bricks.png"
   }
 ];
 
@@ -155,7 +159,7 @@ export const REGISTRATION_STEPS = [
   {
     code: "02",
     title: "Submit the crew",
-    body: "Submit your crew list through the Google Form  before the deadline.",
+    body: "Submit your crew list through the Google Form before the deadline.",
   },
   {
     code: "03",
@@ -171,6 +175,6 @@ export const REGISTRATION_STEPS = [
 
 export const KEY_DATES = [
   { label: "REGISTRATION OPENS", value: "01 SEP 2026" },
-  { label: "REGISTRATION CLOSES", value: "UNKNOWN" },
+  { label: "REGISTRATION CLOSES", value: "TBA" },
   { label: "COMPETITION DAY", value: "20 NOV 2026" },
 ];

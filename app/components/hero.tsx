@@ -1,124 +1,135 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { EVENT_DATE } from "@/app/data/site";
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { y: 24 },
   show: {
-    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
+const STATS = [
+  { label: "Mission Zones", value: "06" },
+  { label: "Crew Capacity", value: "48" },
+  { label: "Divisions", value: "PRI 3-6" },
+];
+
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden border-b border-line"
-    >
-      <OrbitalBackdrop />
-
-      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-24">
+    <section id="home" className="relative overflow-hidden border-b border-line">
+      <WebNodes />
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-32 sm:px-6 sm:pt-40 lg:px-8 lg:pb-24">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <motion.div
-            variants={item}
-            className="flex flex-wrap items-center gap-x-6 gap-y-2 border border-line bg-panel px-4 py-2.5"
-          >
-            <span className="flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.25em] text-snow">
-              <span className="h-2 w-2 animate-blink bg-red" aria-hidden />
-              Mission Status: Registration Starts Soon
-            </span>
-            <Countdown />
-          </motion.div>
-
           <motion.p
             variants={item}
-            className="mt-10 flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-[0.35em] text-sky"
+            className="font-mono text-xs font-medium uppercase tracking-[0.3em] text-steel"
           >
-            <span className="inline-block h-px w-10 bg-red" aria-hidden />
-            SST RoboSummit 2026 // Season 02
+            SST RoboSummit 2026 · Season 02
           </motion.p>
 
           <motion.h1
             variants={item}
-            className="mt-5 text-5xl font-bold uppercase leading-[0.95] tracking-tight text-snow sm:text-7xl lg:text-8xl"
+            className="mt-6 text-[clamp(3.25rem,9vw,6rem)] font-bold uppercase leading-[0.94] tracking-tight text-snow"
           >
-            Planetary
-            <span className="block text-blue">Pioneers</span>
+            Planetary Pioneers
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-base leading-relaxed text-silver sm:text-lg"
+            className="mt-8 max-w-2xl text-lg leading-relaxed text-silver sm:text-xl"
           >
             The School of Science and Technology&apos;s flagship robotics
             tournament. Six mission zones. One frontier. Build your machine,
             qualify your crew, and plant your flag on the summit leaderboard.
           </motion.p>
-
-          <motion.div
-            variants={item}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <motion.a
-              href="#registration"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-red bg-red px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.2em] text-snow transition-colors duration-200 hover:border-blue hover:bg-blue"
-            >
-              Register Now
-            </motion.a>
-            <motion.a
-              href="#challenges"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-blue px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.2em] text-sky transition-colors duration-200 hover:bg-blue hover:text-snow"
-            >
-              View Challenges
-            </motion.a>
-          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 grid grid-cols-2 gap-px border border-line bg-line lg:grid-cols-4"
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mt-14"
         >
-          {[
-            { label: "Mission Zones", value: "06" },
-            { label: "Crew Capacity", value: "48" },
-            { label: "Divisions", value: "PRI 3-6" },
-            { label: "Trophy", value: "UNKNOWN" },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-panel px-5 py-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-steel">
+          <motion.dl
+            variants={item}
+            className="grid grid-cols-1 divide-y divide-line border border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+          >
+            <div className="px-6 py-5">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
+                Competition Day
+              </dt>
+              <dd className="mt-2 text-3xl font-bold uppercase tracking-tight text-snow sm:text-4xl">
+                20 Nov 2026
+              </dd>
+            </div>
+            <div className="px-6 py-5">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
+                Countdown
+              </dt>
+              <dd className="mt-2 font-mono text-lg font-semibold text-red-bright sm:mt-3.5 sm:text-xl">
+                <Countdown />
+              </dd>
+            </div>
+            <div className="px-6 py-5">
+              <dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
+                Registration
+              </dt>
+              <dd className="mt-2 text-3xl font-bold uppercase tracking-tight text-snow sm:text-4xl">
+                Opens 01 Sep
+              </dd>
+            </div>
+          </motion.dl>
+
+          <motion.div
+            variants={item}
+            className="mt-8 flex flex-wrap items-center gap-4"
+          >
+            <a
+              href="#registration"
+              className="bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-void transition-colors duration-200 hover:bg-snow"
+            >
+              Register Now
+            </a>
+            <a
+              href="#challenges"
+              className="border border-line-2 px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-snow transition-colors duration-200 hover:border-snow"
+            >
+              View Challenges
+            </a>
+          </motion.div>
+        </motion.div>
+
+        <motion.dl
+          initial={{ y: 24 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 grid grid-cols-1 gap-x-6 gap-y-8 border-t border-line pt-10 sm:grid-cols-3"
+        >
+          {STATS.map((stat) => (
+            <div key={stat.label} className="flex flex-col">
+              <dt className="order-2 mt-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
                 {stat.label}
-              </p>
-              <p className="mt-1 text-xl font-bold uppercase tracking-wide text-snow">
+              </dt>
+              <dd className="order-1 text-2xl font-bold uppercase tracking-tight text-snow sm:text-3xl">
                 {stat.value}
-              </p>
+              </dd>
             </div>
           ))}
-        </motion.div>
+        </motion.dl>
       </div>
     </section>
   );
@@ -147,63 +158,21 @@ function Countdown() {
     return () => clearInterval(id);
   }, []);
 
-  return (
-    <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.25em] text-sky">
-      {label}
-    </span>
-  );
+  return <span suppressHydrationWarning>{label}</span>;
 }
 
-function OrbitalBackdrop() {
-  const mouseX = useMotionValue(0.5);
-  const mouseY = useMotionValue(0.5);
+type Node = {
+  x: number;
+  y: number;
+  driftX: number;
+  driftY: number;
+  offsetX: number;
+  offsetY: number;
+  radius: number;
+  accent: boolean;
+};
 
-  useEffect(() => {
-    const onMove = (e: PointerEvent) => {
-      mouseX.set(e.clientX / window.innerWidth);
-      mouseY.set(e.clientY / window.innerHeight);
-    };
-    window.addEventListener("pointermove", onMove);
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [mouseX, mouseY]);
-
-  const spring = { stiffness: 60, damping: 20, mass: 0.8 };
-  const ringX = useSpring(useTransform(mouseX, [0, 1], [40, -40]), spring);
-  const ringY = useSpring(useTransform(mouseY, [0, 1], [32, -32]), spring);
-
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
-      <svg className="absolute inset-0 h-full w-full text-line" role="presentation">
-        <defs>
-          <pattern id="hero-grid" width="56" height="56" patternUnits="userSpaceOnUse">
-            <path d="M 56 0 L 0 0 0 56" fill="none" stroke="currentColor" strokeWidth="1" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hero-grid)" opacity="0.45" />
-      </svg>
-
-      <ParticleNetwork />
-
-      <motion.div
-        style={{ x: ringX, y: ringY }}
-        className="absolute -right-[400px] top-1/2 hidden -translate-y-1/2 md:block opacity-50"
-      >
-        <div className="relative h-[900px] w-[900px] animate-spin-slower">
-          <svg viewBox="0 0 900 900" className="absolute inset-0 h-full w-full">
-            <circle cx="450" cy="450" r="430" fill="none" stroke="var(--color-line)" strokeWidth="1" />
-            <circle cx="450" cy="450" r="320" fill="none" stroke="var(--color-line-2)" strokeWidth="1" strokeDasharray="4 10" />
-            <circle cx="450" cy="450" r="210" fill="none" stroke="var(--color-line)" strokeWidth="1" />
-            <circle cx="450" cy="20" r="8" fill="var(--color-red)" />
-            <circle cx="770" cy="450" r="7" fill="var(--color-blue)" />
-            <circle cx="450" cy="660" r="6" fill="var(--color-sky)" />
-          </svg>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
-function ParticleNetwork() {
+function WebNodes() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -212,126 +181,213 @@ function ParticleNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let width = canvas.offsetWidth;
-    let height = canvas.offsetHeight;
-    canvas.width = width;
-    canvas.height = height;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const LINK_DIST = 165;
+    const PUSH_DIST = 200;
+    const MOUSE_LINK_DIST = 200;
+    const MAX_OFFSET = 52;
 
-    const particles: any[] = [];
-    const numParticles = Math.floor((width * height) / 12000); 
+    let width = 0;
+    let height = 0;
+    let frame = 0;
+    let last = 0;
+    let hover = 0;
+    let hoverTarget = 0;
+    let nodes: Node[] = [];
+    const pointer = { x: -99999, y: -99999 };
 
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        baseX: Math.random() * width,
-        baseY: Math.random() * height,
+    const seed = () => {
+      const total = Math.max(
+        40,
+        Math.min(120, Math.round((width * height) / 11000))
+      );
+      nodes = Array.from({ length: total }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: 0,
-        vy: 0,
-        radius: Math.random() * 2 + 1.5,
-        color: i % 4 === 0 ? "rgba(255, 60, 60, " : "rgba(14, 165, 233, "
-      });
-    }
-
-    let mouseX = -1000;
-    let mouseY = -1000;
-
-    const onMove = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-    };
-    const onLeave = () => {
-      mouseX = -1000;
-      mouseY = -1000;
+        driftX: (Math.random() - 0.5) * 0.28,
+        driftY: (Math.random() - 0.5) * 0.28,
+        offsetX: 0,
+        offsetY: 0,
+        radius: 1.1 + Math.random() * 1.2,
+        accent: Math.random() < 0.2,
+      }));
     };
 
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerleave", onLeave);
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = canvas.offsetWidth;
+      height = canvas.offsetHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seed();
+    };
 
-    let animationFrameId: number;
+    const advance = (dt: number) => {
+      hover += (hoverTarget - hover) * (1 - Math.pow(0.86, dt));
+      const decay = Math.pow(0.94, dt);
+      for (const n of nodes) {
+        n.offsetX *= decay;
+        n.offsetY *= decay;
+
+        const px = n.x + n.offsetX;
+        const py = n.y + n.offsetY;
+        const dx = px - pointer.x;
+        const dy = py - pointer.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < PUSH_DIST * PUSH_DIST && d2 > 1) {
+          const d = Math.sqrt(d2);
+          const force = (1 - d / PUSH_DIST) ** 2 * 0.7 * hover;
+          n.offsetX += (dx / d) * force * dt;
+          n.offsetY += (dy / d) * force * dt;
+        }
+
+        const off = Math.hypot(n.offsetX, n.offsetY);
+        if (off > MAX_OFFSET) {
+          n.offsetX = (n.offsetX / off) * MAX_OFFSET;
+          n.offsetY = (n.offsetY / off) * MAX_OFFSET;
+        }
+
+        n.x += n.driftX * dt;
+        n.y += n.driftY * dt;
+
+        if (n.x < -24) n.x += width + 48;
+        else if (n.x > width + 24) n.x -= width + 48;
+        if (n.y < -24) n.y += height + 48;
+        else if (n.y > height + 24) n.y -= height + 48;
+      }
+    };
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        
-        const dx = mouseX - p.x;
-        const dy = mouseY - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        const maxDist = 180;
-        let forceX = 0;
-        let forceY = 0;
-        
-        if (dist < maxDist) {
-          const force = (maxDist - dist) / maxDist;
-          forceX = (dx / dist) * force * -6;
-          forceY = (dy / dist) * force * -6;
-        }
-        
-        const sdx = p.baseX - p.x;
-        const sdy = p.baseY - p.y;
-        
-        p.vx += forceX + sdx * 0.03;
-        p.vy += forceY + sdy * 0.03;
-        
-        p.vx *= 0.85;
-        p.vy *= 0.85;
-        
-        p.x += p.vx;
-        p.y += p.vy;
-      }
-
       ctx.lineWidth = 1;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const p1 = particles[i];
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distSq = dx * dx + dy * dy;
-          
-          if (distSq < 15000) {
-            const opacity = 1 - distSq / 15000;
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(100, 116, 139, ${opacity * 0.5})`; 
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.stroke();
-          }
+
+      const nearPointer = (x: number, y: number) => {
+        if (hover < 0.02) return 0;
+        const dx = x - pointer.x;
+        const dy = y - pointer.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 >= MOUSE_LINK_DIST * MOUSE_LINK_DIST) return 0;
+        return (1 - d2 / (MOUSE_LINK_DIST * MOUSE_LINK_DIST)) * hover;
+      };
+
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        const ax = a.x + a.offsetX;
+        const ay = a.y + a.offsetY;
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const bx = b.x + b.offsetX;
+          const by = b.y + b.offsetY;
+          const dx = ax - bx;
+          const dy = ay - by;
+          const d2 = dx * dx + dy * dy;
+          if (d2 >= LINK_DIST * LINK_DIST) continue;
+          const base = 1 - d2 / (LINK_DIST * LINK_DIST);
+          const boost = Math.max(nearPointer(ax, ay), nearPointer(bx, by));
+          const alpha = base * (0.26 + boost * 0.44);
+          const red = Math.round(155 + boost * 100);
+          ctx.strokeStyle = `rgba(${red}, ${Math.round(166 - boost * 80)}, ${Math.round(185 - boost * 110)}, ${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(ax, ay);
+          ctx.lineTo(bx, by);
+          ctx.stroke();
         }
       }
 
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
+      if (hover > 0.02) {
+        ctx.lineWidth = 1.2;
+        for (const n of nodes) {
+          const x = n.x + n.offsetX;
+          const y = n.y + n.offsetY;
+          const near = nearPointer(x, y);
+          if (near <= 0) continue;
+          ctx.strokeStyle = `rgba(255, 90, 71, ${near * 0.55})`;
+          ctx.beginPath();
+          ctx.moveTo(pointer.x, pointer.y);
+          ctx.lineTo(x, y);
+          ctx.stroke();
+        }
+        ctx.lineWidth = 1;
+      }
+
+      for (const n of nodes) {
+        const x = n.x + n.offsetX;
+        const y = n.y + n.offsetY;
+        const near = nearPointer(x, y);
+        if (near > 0.05) {
+          ctx.beginPath();
+          ctx.arc(x, y, n.radius + 3 + near * 4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 90, 71, ${near * 0.14})`;
+          ctx.fill();
+        }
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color + "1)";
+        ctx.arc(x, y, n.radius + near * 1.6, 0, Math.PI * 2);
+        ctx.fillStyle =
+          near > 0.05 || n.accent
+            ? "rgba(255, 90, 71, 0.85)"
+            : "rgba(200, 210, 226, 0.7)";
         ctx.fill();
       }
 
-      animationFrameId = requestAnimationFrame(render);
+      if (hover > 0.02) {
+        ctx.beginPath();
+        ctx.arc(pointer.x, pointer.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 90, 71, ${0.7 * hover})`;
+        ctx.fill();
+      }
     };
 
-    render();
-
-    const onResize = () => {
-      width = canvas.offsetWidth;
-      height = canvas.offsetHeight;
-      canvas.width = width;
-      canvas.height = height;
+    const loop = (now: number) => {
+      const dt = Math.min((now - last) / 16.667, 3);
+      last = now;
+      advance(dt);
+      render();
+      frame = requestAnimationFrame(loop);
     };
-    window.addEventListener("resize", onResize);
+
+    const onPointerMove = (e: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const lx = e.clientX - rect.left;
+      const ly = e.clientY - rect.top;
+      pointer.x = lx;
+      pointer.y = ly;
+      hoverTarget = lx >= 0 && lx <= rect.width && ly >= 0 && ly <= rect.height ? 1 : 0;
+    };
+    const onPointerLeave = () => {
+      hoverTarget = 0;
+    };
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    if (reduced.matches) {
+      render();
+    } else {
+      window.addEventListener("pointermove", onPointerMove);
+      window.addEventListener("pointerleave", onPointerLeave);
+      last = performance.now();
+      frame = requestAnimationFrame(loop);
+    }
 
     return () => {
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerleave", onLeave);
-      window.removeEventListener("resize", onResize);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 h-full w-full hidden lg:block opacity-75" aria-hidden />;
+  const vignette =
+    "radial-gradient(130% 120% at 50% 0%, black 55%, transparent 92%)";
+
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      <canvas
+        ref={canvasRef}
+        className="h-full w-full opacity-60"
+        style={{ maskImage: vignette, WebkitMaskImage: vignette }}
+      />
+    </div>
+  );
 }

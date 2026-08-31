@@ -18,63 +18,58 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ y: -72, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ y: -16 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled
-          ? "border-line bg-void/95 backdrop-blur"
+        scrolled || open
+          ? "border-line bg-void/90 backdrop-blur"
           : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#home"
-          className="group flex items-center gap-3"
+          className="flex items-center gap-3"
           aria-label="SST RoboSummit — Home"
         >
-          <LogoMark />
-          <span className="leading-none">
-            <span className="block text-sm font-bold uppercase tracking-[0.22em] text-snow transition-colors group-hover:text-sky">
-              SST RoboSummit
-            </span>
-            <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.3em] text-steel">
-              Planetary Pioneers
-            </span>
+          <Image
+            src="/summit.png"
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
+          <span className="text-sm font-bold uppercase tracking-[0.18em] text-snow">
+            SST RoboSummit
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="group relative font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-silver transition-colors duration-200 hover:text-snow"
+              className="text-sm font-medium text-silver transition-colors duration-200 hover:text-snow"
             >
               {link.label}
-              <span
-                className="absolute -bottom-1.5 left-0 h-0.5 w-full origin-left scale-x-0 bg-red transition-transform duration-200 ease-out group-hover:scale-x-100"
-                aria-hidden
-              />
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <motion.a
+          <a
             href="#registration"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="hidden border border-red bg-red px-5 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-snow transition-colors duration-200 hover:border-blue hover:bg-blue sm:inline-block"
+            className="hidden bg-red px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-void transition-colors duration-200 hover:bg-snow sm:inline-block"
           >
             Register Now
-          </motion.a>
+          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="flex h-10 w-10 items-center justify-center border border-line text-snow transition-colors hover:border-sky lg:hidden"
+            className="flex h-10 w-10 items-center justify-center border border-line text-snow transition-colors hover:border-line-2 lg:hidden"
           >
             <svg
               viewBox="0 0 20 20"
@@ -109,10 +104,9 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between border border-transparent px-3 py-3 font-mono text-xs uppercase tracking-[0.2em] text-silver transition-colors hover:border-line hover:bg-panel hover:text-snow"
+                    className="block px-3 py-3 text-sm font-medium text-silver transition-colors hover:bg-panel hover:text-snow"
                   >
                     {link.label}
-                    <span className="h-1.5 w-1.5 bg-red" aria-hidden />
                   </a>
                 </li>
               ))}
@@ -120,7 +114,7 @@ export default function Header() {
                 <a
                   href="#registration"
                   onClick={() => setOpen(false)}
-                  className="block border border-red bg-red px-3 py-3 text-center font-mono text-xs font-semibold uppercase tracking-[0.2em] text-snow transition-colors hover:bg-blue"
+                  className="block bg-red px-3 py-3 text-center text-xs font-bold uppercase tracking-[0.15em] text-void transition-colors hover:bg-snow"
                 >
                   Register Now
                 </a>
@@ -130,13 +124,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </motion.header>
-  );
-}
-
-function LogoMark() {
-  return (
-    <span className="relative flex h-10 w-10 items-center justify-center border border-line-2 bg-panel">
-      <Image src="/summit.png" alt="" width={40} height={40} className="h-10 w-10" />
-    </span>
   );
 }

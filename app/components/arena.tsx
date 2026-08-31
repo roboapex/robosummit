@@ -7,9 +7,8 @@ export default function Arena() {
     <section className="border-b border-line py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          kicker="Arena Feed"
           title="Inside the Field"
-          description="Six zones carved out of the SST fieldhouse — crater ramps, gantry decks and a sealed firing range. Cameras stream every zone to the mission-control gallery."
+          description="Six zones carved out of the SST fieldhouse: crater ramps, gantry decks, and a sealed firing range. Cameras stream every zone to the mission-control gallery."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">

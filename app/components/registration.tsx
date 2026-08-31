@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import Reveal from "./reveal";
 import { KEY_DATES, REGISTRATION_STEPS } from "@/app/data/site";
@@ -13,60 +10,58 @@ export default function Registration() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          kicker="Launch Sequence"
           title="Registration"
-          description="Four stages between your crew and the arena floor. Complete the sequence before the window closes — capacity is capped at 48 crews."
+          description="Four stages between your crew and the arena floor. Complete the sequence before the window closes. Capacity is capped at 48 crews."
           align="center"
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mx-auto mt-16 grid max-w-6xl gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {REGISTRATION_STEPS.map((step, i) => (
-            <Reveal key={step.code} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                className="group relative h-full border border-line bg-panel p-6 transition-colors duration-200 hover:border-blue"
-              >
+            <Reveal key={step.code} delay={i * 0.08}>
+              <li className="h-full">
                 <span
-                  className="absolute right-4 top-4 font-mono text-4xl font-bold text-line-2 transition-colors duration-200 group-hover:text-blue"
+                  className="font-mono text-4xl font-bold text-red-bright"
                   aria-hidden
                 >
                   {step.code}
                 </span>
-                <span className="inline-block h-1.5 w-8 bg-red transition-all duration-200 group-hover:w-12" aria-hidden />
-                <h3 className="mt-5 text-lg font-bold uppercase tracking-wide text-snow">
+                <h3 className="mt-4 text-xl font-bold uppercase tracking-tight text-snow">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-silver">
+                <p className="mt-2.5 text-sm leading-relaxed text-silver">
                   {step.body}
                 </p>
-              </motion.div>
+              </li>
             </Reveal>
           ))}
-        </div>
+        </ol>
 
         <Reveal delay={0.2}>
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_auto]">
-            <div className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-3">
+          <div className="mx-auto mt-20 max-w-5xl border border-line">
+            <dl className="grid grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
               {KEY_DATES.map((date) => (
-                <div key={date.label} className="bg-panel px-5 py-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-steel">
+                <div key={date.label} className="px-6 py-5">
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
                     {date.label}
-                  </p>
-                  <p className="mt-1 text-lg font-bold uppercase tracking-wide text-snow">
+                  </dt>
+                  <dd
+                    className={`mt-2 text-2xl font-bold uppercase tracking-tight sm:text-3xl ${
+                      date.label === "COMPETITION DAY"
+                        ? "text-red-bright"
+                        : "text-snow"
+                    }`}
+                  >
                     {date.value}
-                  </p>
+                  </dd>
                 </div>
               ))}
-            </div>
-            <motion.a
+            </dl>
+            <a
               href="#contact"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center border-2 border-red bg-red px-10 py-4 font-mono text-sm font-semibold uppercase tracking-[0.2em] text-snow transition-colors duration-200 hover:border-blue hover:bg-blue"
+              className="block border-t border-line bg-red px-10 py-5 text-center text-sm font-bold uppercase tracking-[0.2em] text-void transition-colors duration-200 hover:bg-snow"
             >
               Register Now
-            </motion.a>
+            </a>
           </div>
         </Reveal>
       </div>
