@@ -17,7 +17,7 @@ export default function Home() {
         <main className="flex-1">
           <Hero />
           <Challenges />
-          <Arena />
+          {/*<Arena />*/}
           <Rulebook />
           {/*<Leaderboard />*/}
           <Registration />

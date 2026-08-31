@@ -11,7 +11,7 @@ export default function Registration() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Registration"
-          description="Four stages between your crew and the arena floor. Complete the sequence before the window closes. Capacity is capped at 48 crews."
+          description="Four stages between your crew and the arena floor. Complete the sequence before the window closes. Capacity is capped at 30 crews. (A crew is just our mission-speak for a team — one crew, one team, one robot.)"
           align="center"
         />
 
