@@ -23,14 +23,14 @@ export type Challenge = {
 
 export const CHALLENGES: Challenge[] = [
   {
-    code: "CH-01",
-    name: "Feeding Frenzy",
-    tagline: "Autonomous resupply run",
+    code: "CH-01 (Main Mission)",
+    name: "Moonbase Madnessw",
+    tagline: "Retrieve fuel and launch the rocket",
     description:
-      "Program your rover to cross the Regolith Field, collect nutrient cores and deliver them to the outpost hopper. No driver input once the run begins.",
-    zone: "ZONE A // REGOLITH FIELD",
+      "Program your rover to cross the Regolith Field, collect fuel cores and deliver them to the outpost hopper for a rocket launch. No driver input once the run begins.",
+    zone: "REGOLITH FIELD",
     teamSize: "4 PILOTS",
-    points: "120 PTS MAX",
+    points: "TBA (Largest share of total points)",
     difficulty: "CORE",
     placeholder: "[Placeholder: Mars Rover-style Robot]",
     image: ""

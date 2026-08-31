@@ -10,12 +10,11 @@ export default function Footer() {
               SST RoboSummit
             </p>
             <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.25em] text-steel">
-              Planetary Pioneers
+              Space Saga
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-silver">
               A student-led robotics competition hosted by the School of
-              Science and Technology. Built by students, judged by engineers,
-              flown by the boldest crews on campus.
+              Science and Technology.
             </p>
           </div>
 

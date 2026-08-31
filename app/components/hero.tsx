@@ -45,7 +45,7 @@ export default function Hero() {
             variants={item}
             className="mt-6 font-mono text-xs font-medium uppercase tracking-[0.3em] text-steel"
           >
-            Season 02 · Moonbase Madness
+            Season 02 · Space Saga
 
           </motion.p>
 

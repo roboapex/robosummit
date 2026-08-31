@@ -16,9 +16,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SST RoboSummit — Moonbase Madness",
+  title: "SST RoboSummit — Space Saga",
   description:
-    "SST RoboSummit is the School of Science and Technology's flagship student robotics competition. This season: Moonbase Madness. Form a crew, build your machine, claim the frontier.",
+    "SST RoboSummit is the School of Science and Technology's flagship student robotics competition. This season: Space Saga. Form a crew, build your machine, claim the frontier.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
