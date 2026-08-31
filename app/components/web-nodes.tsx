@@ -128,7 +128,7 @@ export default function WebNodes() {
           const boost = Math.max(nearPointer(ax, ay), nearPointer(bx, by));
           const alpha = base * (0.26 + boost * 0.44);
           const red = Math.round(155 + boost * 100);
-          ctx.strokeStyle = \`rgba(\${red}, \${Math.round(166 - boost * 80)}, \${Math.round(185 - boost * 110)}, \${alpha})\`;
+          ctx.strokeStyle = `rgba(${red}, ${Math.round(166 - boost * 80)}, ${Math.round(185 - boost * 110)}, ${alpha})`;
           ctx.beginPath();
           ctx.moveTo(ax, ay);
           ctx.lineTo(bx, by);
@@ -143,7 +143,7 @@ export default function WebNodes() {
           const y = n.y + n.offsetY;
           const near = nearPointer(x, y);
           if (near <= 0) continue;
-          ctx.strokeStyle = \`rgba(255, 90, 71, \${near * 0.55})\`;
+          ctx.strokeStyle = `rgba(255, 90, 71, ${near * 0.55})`;
           ctx.beginPath();
           ctx.moveTo(pointer.x, pointer.y);
           ctx.lineTo(x, y);
@@ -159,7 +159,7 @@ export default function WebNodes() {
         if (near > 0.05) {
           ctx.beginPath();
           ctx.arc(x, y, n.radius + 3 + near * 4, 0, Math.PI * 2);
-          ctx.fillStyle = \`rgba(255, 90, 71, \${near * 0.14})\`;
+          ctx.fillStyle = `rgba(255, 90, 71, ${near * 0.14})`;
           ctx.fill();
         }
         ctx.beginPath();
@@ -174,7 +174,7 @@ export default function WebNodes() {
       if (hover > 0.02) {
         ctx.beginPath();
         ctx.arc(pointer.x, pointer.y, 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = \`rgba(255, 90, 71, \${0.7 * hover})\`;
+        ctx.fillStyle = `rgba(255, 90, 71, ${0.7 * hover})`;
         ctx.fill();
       }
     };
@@ -219,14 +219,15 @@ export default function WebNodes() {
     };
   }, []);
 
-  // Removed vignette mask so it's fully visible everywhere as requested, 
-  // or I can keep a full-screen vignette if it looks better. I'll keep a subtle vignette.
   const vignette =
     "radial-gradient(ellipse at center, black 60%, transparent 100%)";
 
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+      <div
+        className="sticky top-0 h-screen w-full overflow-hidden"
+        style={{ maskImage: vignette, WebkitMaskImage: vignette }}
+      >
         <canvas
           ref={canvasRef}
           className="h-full w-full opacity-60"

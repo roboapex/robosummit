@@ -85,7 +85,7 @@ export const RULES = [
   {
     code: "R-02",
     title: "Strict Autonomy",
-    body: "Robots must complete missions entirely on their own. Once the start button is pressed, no remote controls, Bluetooth, or physical intervention by the team is permitted.",
+    body: "Robots must complete missions entirely on their own. Once the start button is pressed, no remote controls, Bluetooth, or physical intervention by the crew is permitted.",
   },
   {
     code: "R-03",
