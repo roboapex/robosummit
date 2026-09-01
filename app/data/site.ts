@@ -222,7 +222,7 @@ export const FAQS = [
   {
     question: "How do we register?",
     answer:
-      "Four stages: form your crew, submit the crew list through the Google Form before the deadline, pass tech inspection on competition day, then receive your mission schedule and launch. Capacity is capped at 48 crews, so register early.",
+      "Four stages: form your crew, submit the crew list through the Google Form before the deadline, pass tech inspection on competition day, then receive your mission schedule and launch. Capacity is capped at 30 crews, so register early.",
   },
   {
     question: "What if we need a rule clarification?",
