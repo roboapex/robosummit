@@ -28,7 +28,7 @@ export const CHALLENGES: Challenge[] = [
     name: "Moonbase Madness",
     tagline: "Retrieve fuel and launch the rocket",
     description:
-      "Program your rover to cross the Regolith Field, collect fuel cores, deliver them to the outpost hopper and pull a lever for a rocket launch. No driver input once the run begins.",
+        "Program your rover to cross the Regolith Field, collect fuel cores, deliver them to the outpost hopper and pull a lever for a rocket launch. No driver input once the run begins.",
     zone: "REGOLITH FIELD",
     teamSize: "4 PILOTS",
     points: "TBA (Largest share of total points)",
@@ -41,7 +41,7 @@ export const CHALLENGES: Challenge[] = [
     name: "Crater Catacombs",
     tagline: "Autonomous maze navigation",
     description:
-      "With no sky above and no driver below, the rover must map dead ends, thread narrow passages, and reach the end point before the clock runs out.",
+        "With no sky above and no driver below, the rover must map dead ends, thread narrow passages, and reach the end point before the clock runs out.",
     zone: "ZONE B // SUBSURFACE LABYRINTH",
     teamSize: "3 PILOTS",
     points: "100 PTS MAX",
@@ -51,42 +51,16 @@ export const CHALLENGES: Challenge[] = [
   },
   {
     code: "CH-03",
-    name: "Countdown to Corona",
-    tagline: "High-force launch ignition trials",
+    name: "Fuel Sorting",
+    tagline: "Sort the good from the bad",
     description:
-      "The rocket is supplied — the machine is the launch crew. Our pads hold massive, ignition levers that demand serious force and clever gearing to depress. Lock the lever down and the rocket flies; stall halfway and the pad stays cold.",
-    zone: "ZONE C // LAUNCH PAD",
-    teamSize: "2 PILOTS",
-    points: "90 PTS MAX",
-    difficulty: "CORE",
-    placeholder: "[Placeholder: Robot pushing a heavy ignition lever as a rocket lifts off]",
-    image: "/rocket.jpeg"
-  },
-  {
-    code: "CH-04",
-    name: "Gravity Well Showdown",
-    tagline: "Robotic tug of war",
-    description:
-      "Two machines latch onto opposite ends of a tether strung across the gravity well, engines growling. Pure traction, torque, and tenacity — drag the rival rover across the center line before it drags you into the abyss.",
-    zone: "ZONE E // GRAVITY WELL",
-    teamSize: "4 PILOTS",
-    points: "140 PTS MAX",
-    difficulty: "ADVANCED",
-    placeholder: "[No image available at this moment]",
-    image: ""
-  },
-  {
-    code: "CH-05",
-    name: "Fuel Core Cascade",
-    tagline: "Ball deposition relay",
-    description:
-      "Salvage the scattered fuel cores and rain them into the outpost hoppers from escalating heights. Every core that drops clean through the chute scores; a single jam in the feed line and the whole cascade goes critical.",
+        "Race against the 3-minute clock to power up the outpost! Program your robot to scan incoming fuel balls—separate the good blue fuel from the bad red fuel and send them to the right zones before time runs out.",
     zone: "ZONE D // HOPPER ARRAY",
     teamSize: "3 PILOTS",
     points: "80 PTS MAX",
     difficulty: "ADVANCED",
     placeholder: "[Placeholder: Robot depositing balls into elevated hoppers]",
-    image: "/deposit.jpeg"
+    image: "/deposit.png"
   }
 ];
 
@@ -197,36 +171,36 @@ export const FAQS = [
   {
     question: "What is a crew? Is it the same as a team?",
     answer:
-      "Yes — crew is just our mission-speak for a team. One crew is one team of 2–4 students plus a faculty mentor, registering one robot for the season.",
+        "Yes — crew is just our mission-speak for a team. One crew is one team of 2–4 students plus a faculty mentor, registering one robot for the season.",
   },
   {
     question: "Who can compete?",
     answer:
-      "Any P3–P6 student from the same school may participate. Teams may consist of students from the same level or across different year levels. Each team must have one faculty mentor who serves as a coach, providing guidance only and not assisting with building during competition runs.",
+        "Any P3–P6 student from the same school may participate. Teams may consist of students from the same level or across different year levels. Each team must have one faculty mentor who serves as a coach, providing guidance only and not assisting with building during competition runs.",
   },
   {
     question: "What's the difference between the side mission and the main mission",
     answer:
-    "The side missions are tasks adapted from the main mission so that you can use the same robot. However, the side missions will have a twist!"
+        "The side missions are tasks adapted from the main mission so that you can use the same robot. However, the side missions will have a twist!"
   },
   {
     question: "Are the robots autonomous?",
     answer:
-      "Completely. Once the start button is pressed there are no remote controls, Bluetooth, or any physical intervention. The only way a run stops is a safety 'STOP' call or a boundary violation.",
+        "Completely. Once the start button is pressed there are no remote controls, Bluetooth, or any physical intervention. The only way a run stops is a safety 'STOP' call or a boundary violation.",
   },
   {
     question: "Are there size or weight limits for the robot?",
     answer:
-      "Robots must fit within 250x250x250mm, weigh under 1.5kg, and use safe materials that will not damage the arena. All machines are checked at tech inspection on competition day.",
+        "Robots must fit within 250x250x250mm, weigh under 1.5kg, and use safe materials that will not damage the arena. All machines are checked at tech inspection on competition day.",
   },
   {
     question: "How do we register?",
     answer:
-      "Four stages: form your crew, submit the crew list through the Google Form before the deadline, pass tech inspection on competition day, then receive your mission schedule and launch. Capacity is capped at 30 crews, so register early.",
+        "Four stages: form your crew, submit the crew list through the Google Form before the deadline, pass tech inspection on competition day, then receive your mission schedule and launch. Capacity is capped at 30 crews, so register early.",
   },
   {
     question: "What if we need a rule clarification?",
     answer:
-      "Clarifications are issued through the team captain briefing and are binding for the rest of the season. Judges' decisions on the field are final.",
+        "Clarifications are issued through the team captain briefing and are binding for the rest of the season. Judges' decisions on the field are final.",
   },
 ];

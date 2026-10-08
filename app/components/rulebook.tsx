@@ -41,11 +41,11 @@ export default function Rulebook() {
               <img src={"/rules.png"}/>
               <div className="mt-6 space-y-2 font-mono text-xs uppercase tracking-[0.15em] text-steel">
                 <p>
-                  Version <span className="text-snow">2.0</span> · Format{" "}
+                  Version <span className="text-snow">3.0</span> · Format{" "}
                   <span className="text-snow">Google Drive</span>
                 </p>
                 <p>
-                  Last Revised <span className="text-snow">31 Aug 2026</span>
+                  Last Revised <span className="text-snow">9 Oct 2026</span>
                 </p>
               </div>
               <ul className="mt-6 space-y-2 text-sm text-silver">
