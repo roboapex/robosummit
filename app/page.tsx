@@ -1,12 +1,4 @@
-import Header from "./components/header";
-import Hero from "./components/hero";
-import Challenges from "./components/challenges";
-import Arena from "./components/arena";
-import Rulebook from "./components/rulebook";
-import Registration from "./components/registration";
-import Faq from "./components/faq";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
+import Postponed from "./components/postponed";
 import WebNodes from "./components/web-nodes";
 
 export default function Home() {
@@ -14,18 +6,9 @@ export default function Home() {
     <>
       <WebNodes />
       <div className="relative z-10">
-        <Header />
         <main className="flex-1">
-          <Hero />
-          <Challenges />
-          {/*<Arena />*/}
-          <Rulebook />
-          {/*<Leaderboard />*/}
-          <Registration />
-          <Faq />
-          <Contact />
+          <Postponed />
         </main>
-        <Footer />
       </div>
     </>
   );
